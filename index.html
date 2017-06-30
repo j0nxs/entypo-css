@@ -460,7 +460,13 @@
                       opacity: "0.95",
                       zIndex: "32767",
                       textAlign: "left"
-                    }
+                    },
+                    delay: 0,
+                    minLifetime: 200,
+                    showDuration: 0,
+                    showAnimation: null,
+                    hideDuration: 30,
+                    hideAnimation: function (d) { this.fadeOut(d); }
                 });
                 new Clipboard('.btn');
             });
