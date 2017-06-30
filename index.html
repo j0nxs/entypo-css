@@ -439,14 +439,15 @@
         <script type="text/javascript">
             $('.section > span.icon').each(function () {
                 var clipboardSupport = true;
+                var iconName = $(this).attr('class').split(' ')[1];
                 var thisCode = $(this).prop('outerHTML').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
                 $(this).balloon({
                     html: true,
                     position: 'right',
-                    contents: '<h1>Icon: ' + $(this).attr('class').split(' ')[1] + '</h1><span style="font-size: 15px">To add this Icon write:</span>' + 
+                    contents: '<h1>Icon: ' + iconName + '</h1><span style="font-size: 15px">To add this Icon write:</span>' + 
                     '<span style="font-size: 18px"><pre>' + thisCode + '</pre></span>' + 
-                    '' + (clipboardSupport ? '<button class="btn" style="padding: 10px 20px; margin: 10px;" data-clipboard-text="' + thisCode + '"><span style="font-size: 16px" class="icon clipboard"> Copy to Clipboard</span></button>' : ''),
+                    '' + (clipboardSupport ? '<button class="btn" style="padding: 10px 20px; margin: 10px;" data-clipboard-text="' + iconName + '"><span style="font-size: 16px" class="icon clipboard"> Copy Iconname to Clipboard</span></button>' : ''),
                     css: {
                       fontSize: ".7rem",
                       minWidth: ".7rem",
